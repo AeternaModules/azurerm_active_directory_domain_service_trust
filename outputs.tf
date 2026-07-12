@@ -1,3 +1,7 @@
+output "active_directory_domain_service_trusts_id" {
+  description = "Map of id values across all active_directory_domain_service_trusts, keyed the same as var.active_directory_domain_service_trusts"
+  value       = { for k, v in azurerm_active_directory_domain_service_trust.active_directory_domain_service_trusts : k => v.id }
+}
 output "active_directory_domain_service_trusts_domain_service_id" {
   description = "Map of domain_service_id values across all active_directory_domain_service_trusts, keyed the same as var.active_directory_domain_service_trusts"
   value       = { for k, v in azurerm_active_directory_domain_service_trust.active_directory_domain_service_trusts : k => v.domain_service_id }
